@@ -126,6 +126,7 @@ nav {
 .section-banner {
   background: url("../assets/hero-bg.png") no-repeat center / cover;
   width: 100%;
+  background-size: 100% 100%;
 }
 .banner-container {
   padding: 100px 0;
@@ -142,7 +143,24 @@ nav {
   justify-content: center;
   align-items: center;
   position: relative;
+  margin: 0 auto;
 }
+.banner-img img {
+  animation: float 3s ease-in-out infinite;
+}
+/* animation banner image */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .new {
   position: absolute;
   padding: 10px 20px;
@@ -226,6 +244,18 @@ nav {
   align-items: center;
   gap: 16px;
   padding: 0 15px;
+  animation: CardMotion 2s ease-in-out infinite alternate;
+}
+/* animation */
+@keyframes CardMotion {
+  0% {
+    opacity: 0.5;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .card-title {
   font-size: var(--heading-2);
@@ -254,6 +284,17 @@ nav {
   text-align: center;
   margin-bottom: 40px;
 }
+.section-choice figure img {
+  animation: rotate 4s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /* grid content style */
 .heading-3 {
@@ -279,7 +320,8 @@ nav {
 .content-3,
 .content-4,
 .content-5 {
-  background: var(--primary-background-color);
+  background: rgba(53, 17, 101, 0.4);
+  box-shadow: 0 2px 20px #14141418;
   border-radius: 40px;
   padding: 40px;
   display: flex;
@@ -332,7 +374,10 @@ nav {
   border-radius: 10px;
   max-width: 380px;
   width: 100%;
+  /* animation */
+  animation: float 3s ease-in-out infinite alternate;
 }
+
 iframe {
   width: 100%;
   height: 214px;
@@ -357,6 +402,7 @@ iframe {
   width: 100%;
 }
 
+/* meet host */
 .feature-content-box {
   display: flex;
   justify-content: center;
@@ -392,6 +438,7 @@ iframe {
 /* footer */
 footer {
   background: url("../assets/footer-bg.png") no-repeat center / cover;
+  background-size: 100% 100%;
 }
 .footer-logo {
   max-width: 410px;
@@ -410,9 +457,12 @@ footer {
   gap: 32px;
 }
 .footer-items-icon {
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  align-items: center;
   gap: 40px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 .footer-icon {
   display: flex;
@@ -441,8 +491,30 @@ footer {
     display: block;
   }
 
+  .banner-img {
+    max-width: 200px;
+    height: 200px;
+    margin-top: 80px;
+  }
+  .banner-img img {
+    height: 80px;
+  }
+  .new {
+    top: -5px;
+    right: -20px;
+  }
   .banner-container {
-    padding: 40px 20px;
+    padding: 10px 20px 40px;
+  }
+
+  .about {
+    padding: 50px 20px;
+  }
+  .about-content {
+    padding-bottom: 50px;
+  }
+  .about-cards-box {
+    margin-top: 50px;
   }
   .about-cards-box {
     grid-template-columns: repeat(2, 1fr);
@@ -451,8 +523,14 @@ footer {
   br {
     display: none;
   }
-  .choice {
-    padding: 20px;
+  .section-choice {
+    padding: 50px 20px;
+  }
+  .choice-title {
+    font-size: 32px;
+  }
+  .heading-2 {
+    font-size: 32px;
   }
   .choice-content-container {
     grid-template-columns: 1fr;
@@ -464,19 +542,38 @@ footer {
       "content-5";
   }
 
+  .section-feature {
+    padding: 50px 20px;
+  }
   .feature-cards {
     grid-template-columns: 1fr;
+    margin-bottom: 50px;
   }
   .feature-content-box {
     flex-direction: column;
-    padding: 20px 20px;
     text-align: center;
+    padding: 20px;
   }
   .icon {
     justify-content: center;
   }
+  footer {
+    background-size: 165% 100%;
+  }
   .footer-container {
-    padding: 20px;
+    padding: 40px 20px;
+  }
+  .footer-logo {
+    height: 32px;
+  }
+  .footer-items-icon {
+    grid-template-columns: repeat(2, max-content);
+    gap: 16px;
+    margin-top: 50px;
+    justify-content: center;
+    max-width: 255px;
+    width: 100%;
+    text-align: center;
   }
 }
 /* tablet responsive */
@@ -492,6 +589,21 @@ footer {
     display: block;
   }
 
+  .banner-img {
+    max-width: 200px;
+    height: 200px;
+    margin-top: 80px;
+  }
+  .banner-img img {
+    height: 80px;
+  }
+  .new {
+    top: -5px;
+    right: -20px;
+  }
+  .banner-container {
+    padding: 10px 20px 40px;
+  }
   .about-cards-box {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;

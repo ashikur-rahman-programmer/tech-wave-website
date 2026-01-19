@@ -43,24 +43,21 @@ body {
   margin: 0 auto;
 }
 
-.hide {
-  display: none;
-}
-
 .btn {
   font-size: var(--desc-font);
   color: var(--primary-color);
+  padding: 12px 16px;
+  background: var(--button-bg-color);
   font-weight: 500;
   border-radius: 40px;
   cursor: pointer;
+  /* for transition smoothly */
+  background-size: 300% 300%;
+  background-position: 0% 50%;
+  transition: background-position 0.4s ease;
 }
 .btn:hover {
-  background: linear-gradient(
-    47.64deg,
-    rgba(247, 233, 63, 0.85),
-    rgba(251, 9, 180, 0.85),
-    rgba(145, 0, 248, 0.85)
-  );
+  background-position: 100% 50%;
 }
 .btn:active {
   transform: translateY(3px);
@@ -108,12 +105,6 @@ nav {
   width: 100%;
 }
 
-.nav-btn {
-  padding: 12px 16px;
-  background: var(--button-bg-color);
-  transition: background 3s ease;
-}
-
 .hamburger {
   display: none;
 }
@@ -123,6 +114,10 @@ nav {
 /* banner section */
 .section-banner {
   background: url("../assets/hero-bg.png") no-repeat center / cover;
+}
+.banner-container {
+  padding: 100px 0;
+  margin: 0 auto;
 }
 
 .banner-img {
@@ -147,12 +142,46 @@ nav {
   right: 20px;
   box-shadow: 0 2px 15px #008f47;
 }
-
-.banner-container {
-  padding: 100px 0;
-  margin: 0 auto;
+.banner-content {
+  margin-top: 40px;
+  text-align: center;
 }
 
+.banner-title {
+  font-size: var(--heading-1);
+  color: var(--primary-color);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.banner-desc {
+  font-size: var(--desc-font);
+  color: var(--desc-color);
+  margin-bottom: 24px;
+}
+
+.btn-box {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.banner-btn-2 {
+  font-size: var(--desc-font);
+  color: var(--secondary-color);
+  font-weight: 500;
+  border: 2px solid var(--secondary-color);
+  border-radius: 40px;
+  padding: 10px 14px;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.banner-btn-2:hover {
+  background: #001f03;
+}
+.banner-btn-2:active {
+  transform: translateY(3px);
+}
 /* /////////////////////////////////////////////////////////// */
 /* mobile responsive */
 @media screen and (max-width: 576px) {

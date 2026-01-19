@@ -357,6 +357,37 @@ iframe {
   width: 100%;
 }
 
+.feature-content-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 40px;
+  background: var(--secondary-background-color);
+  border-radius: 30px;
+}
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.icon a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  /* padding: 10px; */
+  border: 2px solid #e4a4c415;
+  border-radius: 50%;
+}
 /* /////////////////////////////////////////////////////////// */
 /* mobile responsive */
 @media screen and (max-width: 576px) {
@@ -396,6 +427,14 @@ iframe {
 
   .feature-cards {
     grid-template-columns: 1fr;
+  }
+  .feature-content-box {
+    flex-direction: column;
+    padding: 20px 20px;
+    text-align: center;
+  }
+  .icon {
+    justify-content: center;
   }
 }
 /* tablet responsive */

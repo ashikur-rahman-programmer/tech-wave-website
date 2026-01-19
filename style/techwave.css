@@ -211,8 +211,9 @@ nav {
 }
 
 .about-cards-box {
-  display: flex;
+  display: grid;
   gap: 80px;
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: center;
   margin-top: 80px;
@@ -238,7 +239,7 @@ nav {
   font-size: 35px;
 }
 .card-desc {
-  font-size: 20px;
+  font-size: var(--desc-font);
   color: var(--desc-color);
   line-height: 20px;
 }
@@ -258,6 +259,13 @@ nav {
   .banner-container {
     padding: 40px 20px;
   }
+  .about-cards-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  br {
+    display: none;
+  }
 }
 
 /* tablet responsive */
@@ -271,5 +279,10 @@ nav {
   }
   .hamburger {
     display: block;
+  }
+
+  .about-cards-box {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 }

@@ -284,15 +284,7 @@ nav {
   margin-bottom: 40px;
 }
 .section-choice figure img {
-  animation: rotate 4s linear infinite;
-}
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: float 4s linear infinite;
 }
 
 /* grid content style */
